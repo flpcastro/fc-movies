@@ -1,0 +1,3 @@
+const FAVORITE_MOVIE_COLLECTION = '@favoriteMovies';
+
+export { FAVORITE_MOVIE_COLLECTION };
