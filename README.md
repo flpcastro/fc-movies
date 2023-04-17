@@ -1,10 +1,10 @@
 <div align="center">
-    <img alt="Logo" src="./assets/logo.png" width="700" height="200">
+    <img alt="Logo" src="./assets/logo.png" width="600" height="200">
 </div>
 
 # fC.movies
 
-## O que é necessário para testar essa aplicação?
+## O que é necessário para rodar essa aplicação?
 
 - [Node.js](https://nodejs.org/en) em versões LTS;
 - [Yarn](https://yarnpkg.com/);
@@ -61,3 +61,6 @@ Inicie o expo
 - [x] Ao clicar em uma imagem do filme na tela inicial, aparecer os detalhes do mesmo;
 - [x] Barra de busca com base no texto digitado pelo usuário;
 - [x] Filtrar filmes por gênero;
+- [x] Permitir que o usuário adicione filmes à uma lista de favoritos.
+- [x] O aplicativo deve ser capaz de exibir a lista de filmes favoritos offline.
+- [x] Permitir que o usuário compartilhe um filme nas redes sociais, utilizando a lib de compartilhamento do React Native.

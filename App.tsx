@@ -1,14 +1,13 @@
-import { ThemeProvider } from 'styled-components/native';
 import { StatusBar } from 'react-native';
-
+import { Provider } from 'react-redux';
 import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
 
+import { ThemeProvider } from 'styled-components/native';
 import theme from '@theme/index';
 
 import { Routes } from '@routes/index';
 import { Loading } from '@components/Loading';
-import { Provider } from 'react-redux';
-import { Store } from './src/store/storeConfig';
+import { Store } from '@features/movieId';
 
 
 export default function App() {
