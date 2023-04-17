@@ -1,10 +1,10 @@
 import { Container, GenreName } from "./styles";
 
-interface Genre {
+type Genre = {
   name: string;
 }
 
-interface Props {
+type Props = {
   data: Genre;
   onPress?: () => void;
 }
