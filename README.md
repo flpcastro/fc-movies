@@ -99,12 +99,12 @@ Inicie o emulador iOS
 
 ## Prints
 
-<div >
-  <img alt="Logo" src="./assets/prints/1-print-login.png">
-  <img alt="Logo" src="./assets/prints/2-print-signup.png">
-  <img alt="Logo" src="./assets/prints/3-print-login-alert.png">
-  <img alt="Logo" src="./assets/prints/4-print-home.png">
-  <img alt="Logo" src="./assets/prints/5-print-search.png">
-  <img alt="Logo" src="./assets/prints/6-print-movie-details.png">
-  <img alt="Logo" src="./assets/prints/7-print-favorite-movies.png">
+<div style="display: flex">
+  <img alt="Logo" src="./assets/prints/1-print-login.png" width="300" height="700">
+  <img alt="Logo" src="./assets/prints/2-print-signup.png" width="300" height="700">
+  <img alt="Logo" src="./assets/prints/3-print-login-alert.png" width="300" height="700">
+  <img alt="Logo" src="./assets/prints/4-print-home.png" width="300" height="700">
+  <img alt="Logo" src="./assets/prints/5-print-search.png" width="300" height="700">
+  <img alt="Logo" src="./assets/prints/6-print-movie-details.png" width="300" height="700">
+  <img alt="Logo" src="./assets/prints/7-print-favorite-movies.png" width="300" height="700">
 </div>
