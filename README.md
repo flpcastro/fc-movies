@@ -10,8 +10,9 @@
 - [Yarn](https://yarnpkg.com/);
 - [Git](https://git-s);
 - [Xcode](https://developer.apple.com/xcode/);
-- [Cocoapods](https://cocoapods.org/)
+- [Cocoapods](https://cocoapods.org/);
 - [Watchman](https://facebook.github.io/watchman/) para usuários de macOS ou Linux;
+- [Expo CLI](https://docs.expo.dev/get-started/installation/);
 
 ## Tecnologias utilizadas
 
@@ -49,16 +50,40 @@ Entre no diretório do projeto
   cd fc-movies
 ```
 
+Abra a sua IDE
+
+```bash
+  code .
+```
+
 Instale as dependências
 
 ```bash
   yarn
 ```
 
-Inicie o expo
+Entre na pasta ios
 
 ```bash
-  yarn expo start
+  cd ios/
+```
+
+Baixe as dependencias do Cocoapods
+
+```bash
+  pod install
+```
+
+Volte para a pasta raiz
+
+```bash
+  cd ..
+```
+
+Inicie o emulador iOS
+
+```bash
+  yarn ios
 ```
 
 ## Funcionalidades
@@ -71,3 +96,15 @@ Inicie o expo
 - [x] O aplicativo deve ser capaz de exibir a lista de filmes favoritos offline.
 - [x] Permitir que o usuário compartilhe um filme nas redes sociais, utilizando a lib de compartilhamento do React Native.
 - [x] Ter um sistema de login utilizando o Firebase ou outra plataforma similar.
+
+## Prints
+
+<div >
+  <img alt="Logo" src="./assets/prints/1-print-login.png">
+  <img alt="Logo" src="./assets/prints/2-print-signup.png">
+  <img alt="Logo" src="./assets/prints/3-print-login-alert.png">
+  <img alt="Logo" src="./assets/prints/4-print-home.png">
+  <img alt="Logo" src="./assets/prints/5-print-search.png">
+  <img alt="Logo" src="./assets/prints/6-print-movie-details.png">
+  <img alt="Logo" src="./assets/prints/7-print-favorite-movies.png">
+</div>
