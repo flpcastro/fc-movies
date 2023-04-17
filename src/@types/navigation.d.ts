@@ -3,6 +3,9 @@ export declare global {
     interface RootParamList {
       home: undefined;
       movieDetails: undefined;
+      favoriteMovies: undefined;
+      signUp: undefined;
+      signIn: undefined;
     }
   }
 }
