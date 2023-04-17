@@ -99,7 +99,7 @@ Inicie o emulador iOS
 
 ## Prints
 
-<div style="display: flex">
+<div style="display: flex" align="center">
   <img alt="Logo" src="./assets/prints/1-print-login.png" width="300" height="700">
   <img alt="Logo" src="./assets/prints/2-print-signup.png" width="300" height="700">
   <img alt="Logo" src="./assets/prints/3-print-login-alert.png" width="300" height="700">
