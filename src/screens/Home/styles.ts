@@ -25,3 +25,8 @@ export const FlatListContainer = styled.View`
   margin-top: 24px;
   gap: 24px;
 `;
+
+export const MovieListEmptyText = styled.Text`
+  color: ${({ theme }) => theme.COLORS.WHITE};
+  text-align: center;
+`;

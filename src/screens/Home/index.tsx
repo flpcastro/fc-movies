@@ -1,19 +1,25 @@
 import { useEffect, useRef, useState } from "react";
-import { Container, Content, FlatListContainer, NoResultText } from "./styles";
 import { FlatList } from "react-native";
-import { api} from "@services/api";
+import { useNavigation } from "@react-navigation/native";
+
 import { Loading } from "@components/Loading";
 import { Header } from "@components/Header";
 import { Input } from "@components/Input";
 import  MovieCard  from "@components/MovieCard";
 import { GenreCard } from "@components/GenreCard";
-import { useNavigation } from "@react-navigation/native";
 
-interface Movie {
+import { api } from "@services/api";
+
+import { AppError } from "@utils/app-error";
+
+import { Container, Content, FlatListContainer, MovieListEmptyText } from "./styles";
+
+export interface Movie {
   id: number;
   overview: string;
   poster_path: string;
   title: string;
+  genre_ids: any[];
 }
 
 interface Genre {
@@ -24,9 +30,9 @@ interface Genre {
 export function Home() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [searchResultMovies, setSearchResultMovies] = useState<Movie[]>([]);
+  const [filteredMoviesPerGenre, setFilteredMoviesPerGenre] = useState<Movie[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
-  const [noResult, setNoResult] = useState(false);
   const [search, setSearch] = useState('');
   const [genres, setGenres] = useState<Genre[]>([]);
 
@@ -44,6 +50,21 @@ export function Home() {
     setGenres(response.data.genres);
   }
 
+  async function handleFilterPerGenres(genre: any) {
+    const filteredMovies: Movie[] = [];
+    for(let i = 0; i < movies.length; i++) {
+      if(movies[i].genre_ids.find(genreId => genreId === genre)) {
+        const moviesFiltered = movies[i];
+        filteredMovies.push(moviesFiltered);
+      }
+    }
+
+    setTimeout(() => {
+      setFilteredMoviesPerGenre(filteredMovies);
+    }, 200);
+  }
+
+
   async function fetchMovies() {
     try {
       setIsLoading(true);
@@ -55,7 +76,11 @@ export function Home() {
       setMovies([...movies, ...response.data.results]);
       setPage(page + 1);
     } catch (error) {
-      console.log(error);
+      if(error instanceof AppError) {
+        return new AppError(error.message);
+      } else {
+        console.log(error);
+      }
     } finally {
       setIsLoading(false);
     }
@@ -71,12 +96,10 @@ export function Home() {
     });
 
     if(response.data.results.length === 0) {
-      setNoResult(true);
       setIsLoading(false);
       setSearchResultMovies([]);
     } else {
       setSearchResultMovies(response.data.results)
-      setNoResult(false);
       setIsLoading(false);
     }
 
@@ -92,8 +115,8 @@ export function Home() {
     }
   }
 
-  const movieData = search.length > 2 ? searchResultMovies : movies;
-
+  const movieData = search.length > 2 ? searchResultMovies : filteredMoviesPerGenre.length > 0 ? filteredMoviesPerGenre : movies;
+  
   useEffect(() => {
     fetchGenres();
     fetchMovies();
@@ -110,12 +133,6 @@ export function Home() {
           onChangeText={handleSearch}
         />
 
-        {noResult && (
-          <NoResultText>
-            Nenhum filme encontrado para "{search}"
-          </NoResultText>
-        )}
-
         <FlatListContainer>
           <FlatList
             horizontal
@@ -124,7 +141,7 @@ export function Home() {
             renderItem={(item) => (
               <GenreCard 
                 data={item.item}
-                onPress={() => {}}
+                onPress={() => handleFilterPerGenres(item.item.id)}
               />
             )}
             showsHorizontalScrollIndicator={false}
@@ -146,6 +163,13 @@ export function Home() {
             }}
             onEndReached={() => fetchMovies()}
             onEndReachedThreshold={0.5}
+            ListEmptyComponent={
+              isLoading ? 
+              <Loading /> : (
+              <MovieListEmptyText>
+                Nenhum filme encontrado para "{search}"
+              </MovieListEmptyText>
+            )}
           />
           {isLoading && <Loading />}
         </FlatListContainer>
