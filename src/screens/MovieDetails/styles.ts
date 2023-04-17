@@ -1,4 +1,4 @@
-import { CaretLeft } from "phosphor-react-native";
+import { CaretLeft, ShareNetwork } from "phosphor-react-native";
 import { Platform, StatusBar } from "react-native";
 import styled, { css } from "styled-components/native";
 
@@ -18,7 +18,7 @@ export const BackIcon = styled(CaretLeft).attrs(( { theme }) => ({
 export const Container = styled.View`
   align-items: center;
   min-height: 100%;
-  padding: 24px;
+  padding: 0 24px 24px 24px;
 `;
 
 export const Poster = styled.Image`
@@ -28,30 +28,40 @@ export const Poster = styled.Image`
 
 export const TitleContent = styled.View`
   width: 100%;
-  flex-direction: row;
+  height: 30px;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 25px;
+  gap: 8px;
 `;
 
 export const MovieTitle = styled.Text`
-  font-size: ${({ theme }) => theme.FONT_SIZE.LG}px;
-  font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
-  color: ${({ theme }) => theme.COLORS.WHITE};
-  margin-right: 30px;
-  height: 100%;
+  ${({ theme }) => css`
+    font-size: ${theme.FONT_SIZE.LG}px;
+    font-family: ${theme.FONT_FAMILY.BOLD};
+    color: ${theme.COLORS.WHITE};
+  `}
+  
   max-width: 80%;
 `;
 
 export const MovieRating = styled.View`
   flex-direction: row;
   gap: 4px;
+  align-items: center;
 `;
 
+export const RateAndFavoriteContainer = styled.View`
+  flex-direction: row;
+  gap: 13px;
+  align-items: center;
+  justify-content: space-between;
+`;
 
 export const RatingText = styled.Text`
   ${({ theme }) => css`
-    font-size: ${theme.FONT_SIZE.MD}px;
+    font-size: ${theme.FONT_SIZE.XL}px;
     font-family: ${theme.FONT_FAMILY.BOLD};
     color: ${theme.COLORS.GREEN_700};
   `}
@@ -109,3 +119,8 @@ export const InfoTitle = styled.Text`
 export const InfoContent = styled.Text`
   color: ${({ theme }) => theme.COLORS.GRAY_200};
 `;
+
+export const ShareIcon = styled(ShareNetwork).attrs(( { theme }) => ({
+  size: 28,
+  color: theme.COLORS.GREEN_500,
+}))``;
