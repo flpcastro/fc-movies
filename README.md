@@ -9,17 +9,23 @@
 - [Node.js](https://nodejs.org/en) em versões LTS;
 - [Yarn](https://yarnpkg.com/);
 - [Git](https://git-s);
+- [Xcode](https://developer.apple.com/xcode/);
+- [Cocoapods](https://cocoapods.org/)
 - [Watchman](https://facebook.github.io/watchman/) para usuários de macOS ou Linux;
 
 ## Tecnologias utilizadas
 
-- [TypeScript](https://www.typescriptlang.org/)
-- [React-Native](https://reactnative.dev/)
-- [Expo](https://expo.dev/)
-- [Axios](https://axios-http.com/)
-- [Redux](https://redux.js.org/)
-- [Styled-Components](https://styled-components.com/)
-- [React Navigation](https://reactnavigation.org/)
+- [TypeScript](https://www.typescriptlang.org/);
+- [React-Native](https://reactnative.dev/);
+- [Expo](https://expo.dev/);
+- [Firebase](https://firebase.google.com/?hl=pt-br);
+- [Axios](https://axios-http.com/);
+- [Redux](https://redux.js.org/);
+- [React Navigation](https://reactnavigation.org/);
+- [React Hook Form](https://react-hook-form.com/);
+- [Zod](https://zod.dev/);
+- [Phosphor Icons](https://phosphoricons.com/);
+- [Styled-Components](https://styled-components.com/);
 
 ## Variáveis de Ambiente
 
@@ -64,3 +70,4 @@ Inicie o expo
 - [x] Permitir que o usuário adicione filmes à uma lista de favoritos.
 - [x] O aplicativo deve ser capaz de exibir a lista de filmes favoritos offline.
 - [x] Permitir que o usuário compartilhe um filme nas redes sociais, utilizando a lib de compartilhamento do React Native.
+- [x] Ter um sistema de login utilizando o Firebase ou outra plataforma similar.
