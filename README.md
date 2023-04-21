@@ -4,6 +4,12 @@
 
 # fC.movies
 
+## QRCode da build para teste
+
+<div align="center">
+    <img alt="qrcode" src="./assets/prints/qrcode.png">
+</div>
+
 ## O que é necessário para rodar essa aplicação?
 
 - [Node.js](https://nodejs.org/en) em versões LTS;
