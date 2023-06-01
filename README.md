@@ -1,14 +1,4 @@
-<div align="center">
-    <img alt="Logo" src="./assets/logo.png" width="600" height="200">
-</div>
-
 # fC.movies
-
-## QRCode da build para teste
-
-<div align="center">
-    <img alt="qrcode" src="./assets/prints/qrcode.png">
-</div>
 
 ## O que é necessário para rodar essa aplicação?
 
